@@ -1,5 +1,5 @@
 Analysis & Synthesis report for sigmoid
-Thu Jul  9 15:59:03 2020
+Sat Jul 11 14:10:23 2020
 Quartus Prime Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
 
 
@@ -37,7 +37,7 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Failed - Thu Jul  9 15:59:03 2020           ;
+; Analysis & Synthesis Status        ; Failed - Sat Jul 11 14:10:23 2020           ;
 ; Quartus Prime Version              ; 19.1.0 Build 670 09/22/2019 SJ Lite Edition ;
 ; Revision Name                      ; sigmoid                                     ;
 ; Top-level Entity Name              ; sigmoid                                     ;
@@ -161,31 +161,19 @@ https://fpgasoftware.intel.com/eula.
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
-    Info: Processing started: Thu Jul  9 15:58:57 2020
+    Info: Processing started: Sat Jul 11 14:10:17 2020
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off sigmoid -c sigmoid
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
-Warning (10463): Verilog HDL Declaration warning at types.v(1): "struct" is SystemVerilog-2005 keyword File: /home/daniel/Documents/GitHub/sigmoid/types.v Line: 1
-Error (10170): Verilog HDL syntax error at types.v(1) near text: "packed";  expecting ";". Check for and fix any syntax errors that appear immediately before or at the specified keyword. The Intel FPGA Knowledge Database contains many articles with specific details on how to resolve this error. Visit the Knowledge Database at https://www.altera.com/support/support-resources/knowledge-base/search.html and search for this specific error message number. File: /home/daniel/Documents/GitHub/sigmoid/types.v Line: 1
-Error (10839): Verilog HDL error at types.v(1): declaring global objects is a SystemVerilog feature File: /home/daniel/Documents/GitHub/sigmoid/types.v Line: 1
-Error (10839): Verilog HDL error at types.v(3): declaring global objects is a SystemVerilog feature File: /home/daniel/Documents/GitHub/sigmoid/types.v Line: 3
-Error (10839): Verilog HDL error at types.v(4): declaring global objects is a SystemVerilog feature File: /home/daniel/Documents/GitHub/sigmoid/types.v Line: 4
-Error (10170): Verilog HDL syntax error at types.v(5) near text: "}";  expecting a description. Check for and fix any syntax errors that appear immediately before or at the specified keyword. The Intel FPGA Knowledge Database contains many articles with specific details on how to resolve this error. Visit the Knowledge Database at https://www.altera.com/support/support-resources/knowledge-base/search.html and search for this specific error message number. File: /home/daniel/Documents/GitHub/sigmoid/types.v Line: 5
-Error (10187): Verilog HDL syntax error at types.v(5): unexpected end of file in If Statement File: /home/daniel/Documents/GitHub/sigmoid/types.v Line: 5
-Info (12021): Found 0 design units, including 0 entities, in source file sigmoid.v
-Warning (10463): Verilog HDL Declaration warning at types.v(1): "struct" is SystemVerilog-2005 keyword File: /home/daniel/Documents/GitHub/sigmoid/types.v Line: 1
-Error (10149): Verilog HDL Declaration error at types.v(1): identifier "struct" is already declared in the present scope File: /home/daniel/Documents/GitHub/sigmoid/types.v Line: 1
-Error (10170): Verilog HDL syntax error at types.v(1) near text: "packed";  expecting ";". Check for and fix any syntax errors that appear immediately before or at the specified keyword. The Intel FPGA Knowledge Database contains many articles with specific details on how to resolve this error. Visit the Knowledge Database at https://www.altera.com/support/support-resources/knowledge-base/search.html and search for this specific error message number. File: /home/daniel/Documents/GitHub/sigmoid/types.v Line: 1
-Error (10839): Verilog HDL error at types.v(1): declaring global objects is a SystemVerilog feature File: /home/daniel/Documents/GitHub/sigmoid/types.v Line: 1
-Error (10149): Verilog HDL Declaration error at types.v(3): identifier "exp" is already declared in the present scope File: /home/daniel/Documents/GitHub/sigmoid/types.v Line: 3
-Error (10839): Verilog HDL error at types.v(3): declaring global objects is a SystemVerilog feature File: /home/daniel/Documents/GitHub/sigmoid/types.v Line: 3
-Error (10149): Verilog HDL Declaration error at types.v(4): identifier "man" is already declared in the present scope File: /home/daniel/Documents/GitHub/sigmoid/types.v Line: 4
-Error (10839): Verilog HDL error at types.v(4): declaring global objects is a SystemVerilog feature File: /home/daniel/Documents/GitHub/sigmoid/types.v Line: 4
-Error (10170): Verilog HDL syntax error at types.v(5) near text: "}";  expecting a description. Check for and fix any syntax errors that appear immediately before or at the specified keyword. The Intel FPGA Knowledge Database contains many articles with specific details on how to resolve this error. Visit the Knowledge Database at https://www.altera.com/support/support-resources/knowledge-base/search.html and search for this specific error message number. File: /home/daniel/Documents/GitHub/sigmoid/types.v Line: 5
+Info (12021): Found 1 design units, including 1 entities, in source file sigmoid.v
+    Info (12023): Found entity 1: sigmoid File: /home/daniel/Documents/GitHub/sigmoid/sigmoid.v Line: 109
 Info (12021): Found 0 design units, including 0 entities, in source file types.v
-Error: Quartus Prime Analysis & Synthesis was unsuccessful. 14 errors, 3 warnings
+Info (12127): Elaborating entity "sigmoid" for the top level hierarchy
+Error (10127): Verilog HDL unsupported feature error at sigmoid.v(113): real numbers are not supported File: /home/daniel/Documents/GitHub/sigmoid/sigmoid.v Line: 113
+Error (12153): Can't elaborate top-level user hierarchy
+Error: Quartus Prime Analysis & Synthesis was unsuccessful. 2 errors, 1 warning
     Error: Peak virtual memory: 837 megabytes
-    Error: Processing ended: Thu Jul  9 15:59:03 2020
+    Error: Processing ended: Sat Jul 11 14:10:23 2020
     Error: Elapsed time: 00:00:06
     Error: Total CPU time (on all processors): 00:00:17
 
