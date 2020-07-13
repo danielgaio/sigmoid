@@ -3,7 +3,7 @@ $comment
 		vcd file sigmoid.msim.vcd -direction
 $end
 $date
-	Fri Jul 10 21:10:59 2020
+	Mon Jul 13 19:46:16 2020
 $end
 $version
 	ModelSim Version 10.5b
@@ -39,52 +39,53 @@ $var wire 1 5 unknown $end
 $var tri1 1 6 devclrn $end
 $var tri1 1 7 devpor $end
 $var tri1 1 8 devoe $end
-$var wire 1 9 x[0]~input_o $end
-$var wire 1 : y[0]~output_o $end
-$var wire 1 ; y[1]~output_o $end
-$var wire 1 < y[2]~output_o $end
-$var wire 1 = y[3]~output_o $end
-$var wire 1 > y[4]~output_o $end
-$var wire 1 ? y[5]~output_o $end
-$var wire 1 @ y[6]~output_o $end
-$var wire 1 A y[7]~output_o $end
-$var wire 1 B y[8]~output_o $end
-$var wire 1 C y[9]~output_o $end
-$var wire 1 D y[10]~output_o $end
-$var wire 1 E y[11]~output_o $end
-$var wire 1 F y[12]~output_o $end
-$var wire 1 G y[13]~output_o $end
-$var wire 1 H y[14]~output_o $end
-$var wire 1 I y[15]~output_o $end
-$var wire 1 J y[16]~output_o $end
-$var wire 1 K x[16]~input_o $end
-$var wire 1 L x[15]~input_o $end
-$var wire 1 M x[13]~input_o $end
-$var wire 1 N x[14]~input_o $end
-$var wire 1 O Div0~3_combout $end
-$var wire 1 P x[2]~input_o $end
-$var wire 1 Q x[4]~input_o $end
-$var wire 1 R x[3]~input_o $end
-$var wire 1 S x[1]~input_o $end
-$var wire 1 T Div0~0_combout $end
-$var wire 1 U x[7]~input_o $end
-$var wire 1 V x[8]~input_o $end
-$var wire 1 W x[5]~input_o $end
-$var wire 1 X x[6]~input_o $end
-$var wire 1 Y Div0~1_combout $end
-$var wire 1 Z x[10]~input_o $end
-$var wire 1 [ x[12]~input_o $end
-$var wire 1 \ x[9]~input_o $end
-$var wire 1 ] x[11]~input_o $end
-$var wire 1 ^ Div0~2_combout $end
-$var wire 1 _ Div0~4_combout $end
+$var wire 1 9 y[0]~output_o $end
+$var wire 1 : y[1]~output_o $end
+$var wire 1 ; y[2]~output_o $end
+$var wire 1 < y[3]~output_o $end
+$var wire 1 = y[4]~output_o $end
+$var wire 1 > y[5]~output_o $end
+$var wire 1 ? y[6]~output_o $end
+$var wire 1 @ y[7]~output_o $end
+$var wire 1 A y[8]~output_o $end
+$var wire 1 B y[9]~output_o $end
+$var wire 1 C y[10]~output_o $end
+$var wire 1 D y[11]~output_o $end
+$var wire 1 E y[12]~output_o $end
+$var wire 1 F y[13]~output_o $end
+$var wire 1 G y[14]~output_o $end
+$var wire 1 H y[15]~output_o $end
+$var wire 1 I y[16]~output_o $end
+$var wire 1 J x[15]~input_o $end
+$var wire 1 K x[14]~input_o $end
+$var wire 1 L y~3_combout $end
+$var wire 1 M x[10]~input_o $end
+$var wire 1 N x[11]~input_o $end
+$var wire 1 O x[9]~input_o $end
+$var wire 1 P x[8]~input_o $end
+$var wire 1 Q y~2_combout $end
+$var wire 1 R x[12]~input_o $end
+$var wire 1 S x[13]~input_o $end
+$var wire 1 T y~4_combout $end
+$var wire 1 U x[1]~input_o $end
+$var wire 1 V x[0]~input_o $end
+$var wire 1 W x[2]~input_o $end
+$var wire 1 X x[3]~input_o $end
+$var wire 1 Y y~0_combout $end
+$var wire 1 Z x[16]~input_o $end
+$var wire 1 [ x[5]~input_o $end
+$var wire 1 \ x[4]~input_o $end
+$var wire 1 ] x[7]~input_o $end
+$var wire 1 ^ x[6]~input_o $end
+$var wire 1 _ y~1_combout $end
+$var wire 1 ` y~5_combout $end
 $upscope $end
 $upscope $end
 $enddefinitions $end
 #0
 $dumpvars
-b10 !
-02
+b0 !
+12
 01
 00
 0/
@@ -107,7 +108,7 @@ x5
 16
 17
 18
-09
+19
 0:
 0;
 0<
@@ -129,22 +130,23 @@ x5
 0L
 0M
 0N
-1O
+0O
 0P
 0Q
 0R
-1S
+0S
 0T
 0U
 0V
 0W
 0X
-1Y
+0Y
 0Z
 0[
 0\
 0]
-1^
+0^
 0_
+0`
 $end
 #1000000
