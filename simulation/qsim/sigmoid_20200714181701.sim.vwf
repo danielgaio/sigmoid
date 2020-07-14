@@ -583,7 +583,7 @@ TRANSITION_LIST("x[2]")
 		NODE
 		{
 			REPEAT = 1;
-			LEVEL 0 FOR 1000.0;
+			LEVEL 1 FOR 1000.0;
 		}
 	}
 }
@@ -609,7 +609,7 @@ TRANSITION_LIST("x[0]")
 		NODE
 		{
 			REPEAT = 1;
-			LEVEL 0 FOR 1000.0;
+			LEVEL 1 FOR 1000.0;
 		}
 	}
 }
@@ -830,7 +830,7 @@ TRANSITION_LIST("y[0]")
 		NODE
 		{
 			REPEAT = 1;
-			LEVEL 1 FOR 1000.0;
+			LEVEL 0 FOR 1000.0;
 		}
 	}
 }

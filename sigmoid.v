@@ -10,6 +10,7 @@
 module sigmoid(x, y);
 	input [16:0]x;
 	output reg [16:0]y;
+
 	
 	always @ (x) begin
 		case (x)
@@ -28,7 +29,4 @@ module sigmoid(x, y);
 		endcase
 	end
 	
-	
 endmodule
-
-

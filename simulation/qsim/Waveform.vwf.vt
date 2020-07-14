@@ -19,7 +19,7 @@
 // the top level entity of the current Quartus project .The user can use this   
 // testbench to simulate his design using a third-party simulation tool .       
 // *****************************************************************************
-// Generated on "07/13/2020 19:46:15"
+// Generated on "07/14/2020 18:20:14"
                                                                                 
 // Verilog Test Bench (with test vectors) for design :                          sigmoid
 // 
@@ -112,7 +112,7 @@ end
 // x[ 3 ]
 initial
 begin
-	x[3] = 1'b0;
+	x[3] = 1'b1;
 end 
 // x[ 2 ]
 initial
@@ -122,7 +122,7 @@ end
 // x[ 1 ]
 initial
 begin
-	x[1] = 1'b0;
+	x[1] = 1'b1;
 end 
 // x[ 0 ]
 initial

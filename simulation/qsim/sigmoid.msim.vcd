@@ -3,7 +3,7 @@ $comment
 		vcd file sigmoid.msim.vcd -direction
 $end
 $date
-	Mon Jul 13 19:46:16 2020
+	Tue Jul 14 18:20:16 2020
 $end
 $version
 	ModelSim Version 10.5b
@@ -84,8 +84,8 @@ $upscope $end
 $enddefinitions $end
 #0
 $dumpvars
-b0 !
-12
+b1010 !
+02
 01
 00
 0/
@@ -108,7 +108,7 @@ x5
 16
 17
 18
-19
+09
 0:
 0;
 0<
@@ -136,17 +136,17 @@ x5
 0R
 0S
 0T
-0U
+1U
 0V
 0W
-0X
-0Y
+1X
+1Y
 0Z
 0[
 0\
 0]
 0^
 0_
-0`
+1`
 $end
 #1000000
