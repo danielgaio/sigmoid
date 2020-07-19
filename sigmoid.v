@@ -8,25 +8,18 @@
 
 
 module sigmoid(x, y);
-	input [16:0]x;
-	output reg [16:0]y;
-
+	input signed [31:0]x;
+	output reg signed [31:0]y;
 	
 	always @ (x) begin
 		case (x)
-			(x < -7):
-				y <= 0;
-				
-			(x == 0):
-				y <= 0.5;
-				
-			(x > 7):
-				y <= 1;
-			
-			default:
-				y <= 0;
+		
+			-7 : y <= 0;
+			0 : y <= 0.5;
+			7 : y <= 1;
 			
 		endcase
 	end
-	
+		
+
 endmodule

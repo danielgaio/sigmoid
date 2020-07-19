@@ -1,13 +1,13 @@
-Analysis & Synthesis Status : Successful - Tue Jul 14 18:14:50 2020
+Analysis & Synthesis Status : Successful - Thu Jul 16 15:34:12 2020
 Quartus Prime Version : 19.1.0 Build 670 09/22/2019 SJ Lite Edition
 Revision Name : sigmoid
 Top-level Entity Name : sigmoid
 Family : Cyclone IV E
-Total logic elements : 6
-    Total combinational functions : 6
+Total logic elements : 0
+    Total combinational functions : 0
     Dedicated logic registers : 0
 Total registers : 0
-Total pins : 34
+Total pins : 2
 Total virtual pins : 0
 Total memory bits : 0
 Embedded Multiplier 9-bit elements : 0
