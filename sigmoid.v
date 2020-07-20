@@ -3,20 +3,19 @@
 // Entradas:
 // Saidas:
 // Descriçao: Implementaçao de funçao sigmoid
-// Fonte do codigo: https://github.com/andywag/NeuralHDL/tree/master/tests/sigmoid/design
 // --------------------------------------------------------------------------------------------
 
 
 module sigmoid(x, y);
-	input signed [31:0]x;
-	output reg signed [31:0]y;
+	input signed [7:0]x;
+	output reg signed [7:0]y;
 	
 	always @ (x) begin
 		case (x)
 		
-			-7 : y <= 0;
-			0 : y <= 0.5;
-			7 : y <= 1;
+			8'b1001_0000 : y <= 0;					// if x == -7 then y = 0
+			8'b0000_0000 : y <= 8'b0000_1000;	// if x == 0 then y = 0.5
+			8'b0111_0000 : y <= 8'b0001_0000;	// if x == 7 then y = 1
 			
 		endcase
 	end
