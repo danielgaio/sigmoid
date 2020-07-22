@@ -1,5 +1,5 @@
 EDA Netlist Writer report for sigmoid
-Sun Jul 19 11:55:05 2020
+Wed Jul 22 10:48:08 2020
 Quartus Prime Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
 
 
@@ -37,7 +37,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------+
 ; EDA Netlist Writer Summary                                        ;
 +---------------------------+---------------------------------------+
-; EDA Netlist Writer Status ; Successful - Sun Jul 19 11:55:05 2020 ;
+; EDA Netlist Writer Status ; Successful - Wed Jul 22 10:48:08 2020 ;
 ; Revision Name             ; sigmoid                               ;
 ; Top-level Entity Name     ; sigmoid                               ;
 ; Family                    ; Cyclone IV E                          ;
@@ -95,13 +95,13 @@ Info: Running Quartus Prime EDA Netlist Writer
     Info: Intel and sold by Intel or its authorized distributors.  Please
     Info: refer to the applicable agreement for further details, at
     Info: https://fpgasoftware.intel.com/eula.
-    Info: Processing started: Sun Jul 19 11:55:05 2020
+    Info: Processing started: Wed Jul 22 10:48:08 2020
 Info: Command: quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=verilog --output_directory=/home/daniel/Documents/GitHub/sigmoid/simulation/qsim/ sigmoid -c sigmoid
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (204019): Generated file sigmoid.vo in folder "/home/daniel/Documents/GitHub/sigmoid/simulation/qsim//" for EDA simulation tool
 Info: Quartus Prime EDA Netlist Writer was successful. 0 errors, 1 warning
     Info: Peak virtual memory: 1018 megabytes
-    Info: Processing ended: Sun Jul 19 11:55:05 2020
+    Info: Processing ended: Wed Jul 22 10:48:08 2020
     Info: Elapsed time: 00:00:00
     Info: Total CPU time (on all processors): 00:00:00
 
