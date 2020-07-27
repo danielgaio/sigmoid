@@ -9,21 +9,21 @@ z2
 cModel Technology
 Z0 d/home/daniel/Documents/GitHub/sigmoid/simulation/qsim
 vhard_block
-Z1 !s110 1595425689
+Z1 !s110 1595893453
 !i10b 1
-!s100 ZR4lWKO862VH0ajTF4HG41
-I[E4]T_mFgg<^:bLHM^DW^1
+!s100 n_VROndM`C3z8g2T<n:On3
+InP<;`3V;HSSjZ5k_V[?Wf1
 Z2 VDg1SIo80bB@j0V0VzS_@n1
 R0
-Z3 w1595425688
+Z3 w1595893449
 Z4 8sigmoid.vo
 Z5 Fsigmoid.vo
-L0 2091
+L0 1821
 Z6 OV;L;10.5b;63
 r1
 !s85 0
 31
-Z7 !s108 1595425689.000000
+Z7 !s108 1595893452.000000
 Z8 !s107 sigmoid.vo|
 Z9 !s90 -work|work|sigmoid.vo|
 !i113 1
@@ -32,8 +32,8 @@ Z11 tCvgOpt 0
 vsigmoid
 R1
 !i10b 1
-!s100 a^Ic_hC1GN;0kW>V2bBj:1
-IEPLj;0`PU=03?2GX3BFCi0
+!s100 YSzW?Mgg^lochndd[HjR13
+IS=1A:0FaliiMCIUKf]UF01
 R2
 R0
 R3
@@ -53,11 +53,11 @@ R11
 vsigmoid_vlg_vec_tst
 R1
 !i10b 1
-!s100 Uz5nzm3B]``mfRShW0;<H2
-IF9I`>Y;2>OIPQ3ClEZc>b1
+!s100 MNdT@CY[;=aAVi6NHOW7a1
+I=SBA^_jMmhlNgEDHjnRP@1
 R2
 R0
-w1595425687
+w1595893448
 8Waveform.vwf.vt
 FWaveform.vwf.vt
 L0 30
@@ -65,7 +65,7 @@ R6
 r1
 !s85 0
 31
-R7
+!s108 1595893453.000000
 !s107 Waveform.vwf.vt|
 !s90 -work|work|Waveform.vwf.vt|
 !i113 1
