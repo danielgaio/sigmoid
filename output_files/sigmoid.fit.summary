@@ -1,12 +1,12 @@
-Fitter Status : Successful - Mon Jul 27 20:41:54 2020
+Fitter Status : Successful - Fri Aug  7 15:35:13 2020
 Quartus Prime Version : 19.1.0 Build 670 09/22/2019 SJ Lite Edition
 Revision Name : sigmoid
 Top-level Entity Name : sigmoid
 Family : Cyclone IV E
 Device : EP4CE6E22C6
 Timing Models : Final
-Total logic elements : 72 / 6,272 ( 1 % )
-    Total combinational functions : 72 / 6,272 ( 1 % )
+Total logic elements : 151 / 6,272 ( 2 % )
+    Total combinational functions : 151 / 6,272 ( 2 % )
     Dedicated logic registers : 0 / 6,272 ( 0 % )
 Total registers : 0
 Total pins : 32 / 92 ( 35 % )

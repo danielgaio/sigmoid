@@ -60,18 +60,6 @@
 					"strict" : false
 				},
 				{
-					"name" : "x[14]",
-					"strict" : false
-				},
-				{
-					"name" : "x[11]",
-					"strict" : false
-				},
-				{
-					"name" : "x[13]",
-					"strict" : false
-				},
-				{
 					"name" : "x[0]",
 					"strict" : false
 				},
@@ -104,10 +92,6 @@
 					"strict" : false
 				},
 				{
-					"name" : "x[8]",
-					"strict" : false
-				},
-				{
 					"name" : "x[9]",
 					"strict" : false
 				},
@@ -116,7 +100,23 @@
 					"strict" : false
 				},
 				{
+					"name" : "x[8]",
+					"strict" : false
+				},
+				{
 					"name" : "x[12]",
+					"strict" : false
+				},
+				{
+					"name" : "x[13]",
+					"strict" : false
+				},
+				{
+					"name" : "x[11]",
+					"strict" : false
+				},
+				{
+					"name" : "x[14]",
 					"strict" : false
 				}
 			]

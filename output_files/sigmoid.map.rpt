@@ -1,5 +1,5 @@
 Analysis & Synthesis report for sigmoid
-Mon Jul 27 20:41:45 2020
+Fri Aug  7 15:35:08 2020
 Quartus Prime Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
 
 
@@ -14,9 +14,10 @@ Quartus Prime Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
   8. General Register Statistics
-  9. Post-Synthesis Netlist Statistics for Top Partition
- 10. Elapsed Time Per Partition
- 11. Analysis & Synthesis Messages
+  9. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 10. Post-Synthesis Netlist Statistics for Top Partition
+ 11. Elapsed Time Per Partition
+ 12. Analysis & Synthesis Messages
 
 
 
@@ -43,13 +44,13 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Mon Jul 27 20:41:45 2020       ;
+; Analysis & Synthesis Status        ; Successful - Fri Aug  7 15:35:08 2020       ;
 ; Quartus Prime Version              ; 19.1.0 Build 670 09/22/2019 SJ Lite Edition ;
 ; Revision Name                      ; sigmoid                                     ;
 ; Top-level Entity Name              ; sigmoid                                     ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 72                                          ;
-;     Total combinational functions  ; 72                                          ;
+; Total logic elements               ; 151                                         ;
+;     Total combinational functions  ; 151                                         ;
 ;     Dedicated logic registers      ; 0                                           ;
 ; Total registers                    ; 0                                           ;
 ; Total pins                         ; 32                                          ;
@@ -175,16 +176,16 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+-------------+
 ; Resource                                    ; Usage       ;
 +---------------------------------------------+-------------+
-; Estimated Total logic elements              ; 72          ;
+; Estimated Total logic elements              ; 151         ;
 ;                                             ;             ;
-; Total combinational functions               ; 72          ;
+; Total combinational functions               ; 151         ;
 ; Logic element usage by number of LUT inputs ;             ;
-;     -- 4 input functions                    ; 54          ;
-;     -- 3 input functions                    ; 12          ;
-;     -- <=2 input functions                  ; 6           ;
+;     -- 4 input functions                    ; 123         ;
+;     -- 3 input functions                    ; 20          ;
+;     -- <=2 input functions                  ; 8           ;
 ;                                             ;             ;
 ; Logic elements by mode                      ;             ;
-;     -- normal mode                          ; 72          ;
+;     -- normal mode                          ; 151         ;
 ;     -- arithmetic mode                      ; 0           ;
 ;                                             ;             ;
 ; Total registers                             ; 0           ;
@@ -195,10 +196,10 @@ https://fpgasoftware.intel.com/eula.
 ;                                             ;             ;
 ; Embedded Multiplier 9-bit elements          ; 0           ;
 ;                                             ;             ;
-; Maximum fan-out node                        ; x[13]~input ;
-; Maximum fan-out                             ; 22          ;
-; Total fan-out                               ; 309         ;
-; Average fan-out                             ; 2.27        ;
+; Maximum fan-out node                        ; x[11]~input ;
+; Maximum fan-out                             ; 43          ;
+; Total fan-out                               ; 613         ;
+; Average fan-out                             ; 2.85        ;
 +---------------------------------------------+-------------+
 
 
@@ -207,7 +208,7 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------+--------------+
 ; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name ; Entity Name ; Library Name ;
 +----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------+--------------+
-; |sigmoid                   ; 72 (72)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 32   ; 0            ; |sigmoid            ; sigmoid     ; work         ;
+; |sigmoid                   ; 151 (151)           ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 32   ; 0            ; |sigmoid            ; sigmoid     ; work         ;
 +----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -227,22 +228,33 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 
 
++------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                           ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+; 18:1               ; 2 bits    ; 24 LEs        ; 24 LEs               ; 0 LEs                  ; No         ; |sigmoid|y                 ;
+; 20:1               ; 2 bits    ; 26 LEs        ; 24 LEs               ; 2 LEs                  ; No         ; |sigmoid|y                 ;
+; 25:1               ; 2 bits    ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; No         ; |sigmoid|y                 ;
+; 26:1               ; 2 bits    ; 34 LEs        ; 32 LEs               ; 2 LEs                  ; No         ; |sigmoid|y                 ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+
+
 +-----------------------------------------------------+
 ; Post-Synthesis Netlist Statistics for Top Partition ;
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
 ; boundary_port         ; 32                          ;
-; cycloneiii_lcell_comb ; 75                          ;
-;     normal            ; 75                          ;
+; cycloneiii_lcell_comb ; 152                         ;
+;     normal            ; 152                         ;
 ;         0 data inputs ; 1                           ;
-;         1 data inputs ; 2                           ;
-;         2 data inputs ; 6                           ;
-;         3 data inputs ; 12                          ;
-;         4 data inputs ; 54                          ;
+;         2 data inputs ; 8                           ;
+;         3 data inputs ; 20                          ;
+;         4 data inputs ; 123                         ;
 ;                       ;                             ;
-; Max LUT depth         ; 10.00                       ;
-; Average LUT depth     ; 8.00                        ;
+; Max LUT depth         ; 8.00                        ;
+; Average LUT depth     ; 7.10                        ;
 +-----------------------+-----------------------------+
 
 
@@ -251,7 +263,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:00     ;
+; Top            ; 00:00:01     ;
 +----------------+--------------+
 
 
@@ -261,28 +273,33 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
-    Info: Processing started: Mon Jul 27 20:41:36 2020
+    Info: Processing started: Fri Aug  7 15:35:00 2020
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off sigmoid -c sigmoid
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file sigmoid_tb.v
+    Info (12023): Found entity 1: sigmoid_tb File: /home/daniel/Documents/GitHub/sigmoid/sigmoid_tb.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file sigmoid.v
-    Info (12023): Found entity 1: sigmoid File: /home/daniel/Documents/GitHub/sigmoid/sigmoid.v Line: 9
+    Info (12023): Found entity 1: sigmoid File: /home/daniel/Documents/GitHub/sigmoid/sigmoid.v Line: 1
 Info (12127): Elaborating entity "sigmoid" for the top level hierarchy
+Warning (10230): Verilog HDL assignment warning at sigmoid.v(11): truncated value with size 16 to match size of target (1) File: /home/daniel/Documents/GitHub/sigmoid/sigmoid.v Line: 11
+Warning (10230): Verilog HDL assignment warning at sigmoid.v(13): truncated value with size 32 to match size of target (1) File: /home/daniel/Documents/GitHub/sigmoid/sigmoid.v Line: 13
+Warning (10240): Verilog HDL Always Construct warning at sigmoid.v(9): inferring latch(es) for variable "x_temp", which holds its previous value in one or more paths through the always construct File: /home/daniel/Documents/GitHub/sigmoid/sigmoid.v Line: 9
 Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "y[13]" is stuck at GND File: /home/daniel/Documents/GitHub/sigmoid/sigmoid.v Line: 11
-    Warning (13410): Pin "y[14]" is stuck at GND File: /home/daniel/Documents/GitHub/sigmoid/sigmoid.v Line: 11
-    Warning (13410): Pin "y[15]" is stuck at GND File: /home/daniel/Documents/GitHub/sigmoid/sigmoid.v Line: 11
+    Warning (13410): Pin "y[13]" is stuck at GND File: /home/daniel/Documents/GitHub/sigmoid/sigmoid.v Line: 3
+    Warning (13410): Pin "y[14]" is stuck at GND File: /home/daniel/Documents/GitHub/sigmoid/sigmoid.v Line: 3
+    Warning (13410): Pin "y[15]" is stuck at GND File: /home/daniel/Documents/GitHub/sigmoid/sigmoid.v Line: 3
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 104 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 183 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 16 input pins
     Info (21059): Implemented 16 output pins
-    Info (21061): Implemented 72 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 5 warnings
-    Info: Peak virtual memory: 922 megabytes
-    Info: Processing ended: Mon Jul 27 20:41:45 2020
-    Info: Elapsed time: 00:00:09
-    Info: Total CPU time (on all processors): 00:00:18
+    Info (21061): Implemented 151 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 8 warnings
+    Info: Peak virtual memory: 926 megabytes
+    Info: Processing ended: Fri Aug  7 15:35:08 2020
+    Info: Elapsed time: 00:00:08
+    Info: Total CPU time (on all processors): 00:00:19
 
 
