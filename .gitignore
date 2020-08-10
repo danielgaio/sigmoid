@@ -1,0 +1,6 @@
+
+*.db_info
+*.flock
+*.rpt
+*.summary
+*.sof
