@@ -6,3 +6,9 @@
 *.sof
 *.tmw_info
 *.qmsg
+*.db_info
+*.qws
+*.ddb
+*.db_info
+*.qmsg
+*.rdb
