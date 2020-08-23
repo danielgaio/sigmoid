@@ -1,3 +1,5 @@
+`timescale 1ns/1ps
+
 module sigmoid (x, y);
 	input signed [15:0]x;
 	output reg signed [15:0]y;
