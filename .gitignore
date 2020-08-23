@@ -4,3 +4,5 @@
 *.rpt
 *.summary
 *.sof
+*.tmw_info
+*.qmsg
