@@ -1,0 +1,87 @@
+m255
+K4
+z2
+!s11f vlog 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 d/home/daniel/Documents/GitHub/sigmoid/simulation/modelsim
+vhard_block
+Z1 DXx6 sv_std 3 std 0 22 VYECXdT12H8WgbUP_5Y6:3
+!s110 1598293842
+!i10b 1
+!s100 JA2QF7XJAn;nAgF2[YMW33
+Z2 !s11b Dg1SIo80bB@j0V0VzS_@n1
+IV@z4Ee4izgSH2Bb@7:]8L3
+Z3 VDg1SIo80bB@j0V0VzS_@n1
+S1
+R0
+w1598293839
+8sigmoid.svo
+Fsigmoid.svo
+!i122 0
+L0 3243 34
+Z4 OV;L;2020.1;71
+r1
+!s85 0
+31
+!s108 1598293842.000000
+!s107 sigmoid.svo|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+.|sigmoid.svo|
+!i113 1
+o-sv -work work
+!s92 -sv -work work +incdir+.
+Z5 tCvgOpt 0
+vsigmoid
+R1
+Z6 !s110 1598293940
+!i10b 1
+!s100 0ZY7O6E;fO505;72720ic3
+R2
+IOgOPbAd:5FHdb0QG1^Qel0
+R3
+S1
+R0
+w1598275521
+8/home/daniel/Documents/GitHub/sigmoid/sigmoid.sv
+F/home/daniel/Documents/GitHub/sigmoid/sigmoid.sv
+!i122 1
+L0 3 89
+R4
+r1
+!s85 0
+31
+Z7 !s108 1598293940.000000
+!s107 /home/daniel/Documents/GitHub/sigmoid/sigmoid.sv|
+!s90 -reportprogress|300|-work|work|/home/daniel/Documents/GitHub/sigmoid/sigmoid.sv|
+!i113 1
+Z8 o-work work
+R5
+vsigmoid_tb
+R1
+R6
+!i10b 1
+!s100 VlOXfGef<G7Qe;<3nAYTO0
+R2
+IESQX7;NhWAc66idEAW^nb1
+R3
+S1
+R0
+w1598293823
+8/home/daniel/Documents/GitHub/sigmoid/sigmoid_tb.sv
+F/home/daniel/Documents/GitHub/sigmoid/sigmoid_tb.sv
+!i122 2
+L0 3 60
+R4
+r1
+!s85 0
+31
+R7
+!s107 /home/daniel/Documents/GitHub/sigmoid/sigmoid_tb.sv|
+!s90 -reportprogress|300|-work|work|/home/daniel/Documents/GitHub/sigmoid/sigmoid_tb.sv|
+!i113 1
+R8
+R5

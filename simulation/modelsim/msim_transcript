@@ -1,0 +1,58 @@
+# do sigmoid_run_msim_gate_systemverilog.do
+# if {[file exists gate_work]} {
+# 	vdel -lib gate_work -all
+# }
+# vlib gate_work
+# vmap work gate_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
+# vmap work gate_work 
+# Copying /home/daniel/intelFPGA/20.1/modelsim_ase/linuxaloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vlog -sv -work work +incdir+. {sigmoid.svo}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 15:30:42 on Aug 24,2020
+# vlog -reportprogress 300 -sv -work work "+incdir+." sigmoid.svo 
+# -- Compiling module sigmoid
+# -- Compiling module hard_block
+# 
+# Top level modules:
+# 	sigmoid
+# End time: 15:30:42 on Aug 24,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+vlog -reportprogress 300 -work work /home/daniel/Documents/GitHub/sigmoid/sigmoid.sv
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 15:32:20 on Aug 24,2020
+# vlog -reportprogress 300 -work work /home/daniel/Documents/GitHub/sigmoid/sigmoid.sv 
+# -- Compiling module sigmoid
+# 
+# Top level modules:
+# 	sigmoid
+# End time: 15:32:20 on Aug 24,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vlog -reportprogress 300 -work work /home/daniel/Documents/GitHub/sigmoid/sigmoid_tb.sv
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 15:32:20 on Aug 24,2020
+# vlog -reportprogress 300 -work work /home/daniel/Documents/GitHub/sigmoid/sigmoid_tb.sv 
+# -- Compiling module sigmoid_tb
+# 
+# Top level modules:
+# 	sigmoid_tb
+# End time: 15:32:20 on Aug 24,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vsim work.sigmoid_tb
+# vsim work.sigmoid_tb 
+# Start time: 15:33:24 on Aug 24,2020
+# Loading sv_std.std
+# Loading work.sigmoid_tb
+# Loading work.sigmoid
+vsim work.sigmoid
+# End time: 15:34:47 on Aug 24,2020, Elapsed time: 0:01:23
+# Errors: 0, Warnings: 0
+# vsim work.sigmoid 
+# Start time: 15:34:47 on Aug 24,2020
+# Loading sv_std.std
+# Loading work.sigmoid
+# End time: 20:40:40 on Aug 24,2020, Elapsed time: 5:05:53
+# Errors: 0, Warnings: 0

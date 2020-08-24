@@ -1,6 +1,8 @@
 vendor_name = ModelSim
 source_file = 1, /home/daniel/Documents/GitHub/sigmoid/sigmoid_tb.v
 source_file = 1, /home/daniel/Documents/GitHub/sigmoid/sigmoid.v
+source_file = 1, /home/daniel/Documents/GitHub/sigmoid/sigmoid.sv
+source_file = 1, /home/daniel/Documents/GitHub/sigmoid/sigmoid_tb.sv
 source_file = 1, /home/daniel/Documents/GitHub/sigmoid/db/sigmoid.cbx.xml
 design_name = sigmoid
 instance = comp, \y[0]~output , y[0]~output, sigmoid, 1
