@@ -1,6 +1,166 @@
+# reading modelsim.ini
+# Loading project sigmoid
+do PLL_RAM_run_msim_rtl_verilog
+# Cannot open macro file: PLL_RAM_run_msim_rtl_verilog
+do PLL_RAM_run_msim_rtl_verilog_do
+# Cannot open macro file: PLL_RAM_run_msim_rtl_verilog_do
+do PLL_RAM_run_msim_rtl_verilog_do
+# Cannot open macro file: PLL_RAM_run_msim_rtl_verilog_do
+# reading modelsim.ini
+do PLL_RAM_run_msim_rtl_verilog_do
+# Cannot open macro file: PLL_RAM_run_msim_rtl_verilog_do
+do PLL_RAM_run_msim_rtl_verilog
+# Cannot open macro file: PLL_RAM_run_msim_rtl_verilog
+do /home/daniel/Downloads/Compressed/Quartus_STD_LITE_PLL_RAM/simulation/modelsim/PLL_RAM_run_msim_rtl_verilog.do
+# if ![file isdirectory PLL_RAM_iputf_libs] {
+# 	file mkdir PLL_RAM_iputf_libs
+# }
+# 
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
+# vmap work rtl_work 
+# Modifying modelsim.ini
+# 
+###### Libraries for IPUTF cores 
+###### End libraries for IPUTF cores 
+###### MIF file copy and HDL compilation commands for IPUTF cores 
+# 
+# 
+# vlog "/home/daniel/Downloads/Compressed/Quartus_STD_LITE_PLL_RAM/ClockPLL_sim/ClockPLL.vo"
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 13:33:38 on Aug 27,2020
+# vlog -reportprogress 300 /home/daniel/Downloads/Compressed/Quartus_STD_LITE_PLL_RAM/ClockPLL_sim/ClockPLL.vo 
+# -- Compiling module ClockPLL
+# 
+# Top level modules:
+# 	ClockPLL
+# End time: 13:33:38 on Aug 27,2020, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# Compile of sigmoid.sv was successful.
-# Errors: 2, Warnings: 0
-# Errors: 2, Warnings: 0
-# Errors: 2, Warnings: 0
-# Compile of sigmoid_tb.sv failed.
+# 
+# vlog -vlog01compat -work work +incdir+/home/daniel/Downloads/Compressed/Quartus_STD_LITE_PLL_RAM {/home/daniel/Downloads/Compressed/Quartus_STD_LITE_PLL_RAM/UP_COUNTER_IP.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 13:33:38 on Aug 27,2020
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/daniel/Downloads/Compressed/Quartus_STD_LITE_PLL_RAM" /home/daniel/Downloads/Compressed/Quartus_STD_LITE_PLL_RAM/UP_COUNTER_IP.v 
+# -- Compiling module UP_COUNTER_IP
+# 
+# Top level modules:
+# 	UP_COUNTER_IP
+# End time: 13:33:38 on Aug 27,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+/home/daniel/Downloads/Compressed/Quartus_STD_LITE_PLL_RAM {/home/daniel/Downloads/Compressed/Quartus_STD_LITE_PLL_RAM/RAMhub.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 13:33:38 on Aug 27,2020
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/daniel/Downloads/Compressed/Quartus_STD_LITE_PLL_RAM" /home/daniel/Downloads/Compressed/Quartus_STD_LITE_PLL_RAM/RAMhub.v 
+# -- Compiling module RAMhub
+# 
+# Top level modules:
+# 	RAMhub
+# End time: 13:33:38 on Aug 27,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+/home/daniel/Downloads/Compressed/Quartus_STD_LITE_PLL_RAM {/home/daniel/Downloads/Compressed/Quartus_STD_LITE_PLL_RAM/PLL_RAM.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 13:33:38 on Aug 27,2020
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/daniel/Downloads/Compressed/Quartus_STD_LITE_PLL_RAM" /home/daniel/Downloads/Compressed/Quartus_STD_LITE_PLL_RAM/PLL_RAM.v 
+# -- Compiling module PLL_RAM
+# 
+# Top level modules:
+# 	PLL_RAM
+# End time: 13:33:38 on Aug 27,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+/home/daniel/Downloads/Compressed/Quartus_STD_LITE_PLL_RAM {/home/daniel/Downloads/Compressed/Quartus_STD_LITE_PLL_RAM/DOWN_COUNTER_IP.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 13:33:38 on Aug 27,2020
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/daniel/Downloads/Compressed/Quartus_STD_LITE_PLL_RAM" /home/daniel/Downloads/Compressed/Quartus_STD_LITE_PLL_RAM/DOWN_COUNTER_IP.v 
+# -- Compiling module DOWN_COUNTER_IP
+# 
+# Top level modules:
+# 	DOWN_COUNTER_IP
+# End time: 13:33:38 on Aug 27,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vlog -vlog01compat -work work +incdir+/home/daniel/Downloads/Compressed/Quartus_STD_LITE_PLL_RAM {/home/daniel/Downloads/Compressed/Quartus_STD_LITE_PLL_RAM/testbench_1.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 13:33:38 on Aug 27,2020
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/daniel/Downloads/Compressed/Quartus_STD_LITE_PLL_RAM" /home/daniel/Downloads/Compressed/Quartus_STD_LITE_PLL_RAM/testbench_1.v 
+# -- Compiling module tb
+# 
+# Top level modules:
+# 	tb
+# End time: 13:33:38 on Aug 27,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs="+acc"  tb
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs=""+acc"" tb 
+# Start time: 13:33:38 on Aug 27,2020
+# Loading work.tb
+# Loading work.PLL_RAM
+# Loading work.ClockPLL
+# Loading sv_std.std
+# Loading altera_lnsim_ver.altera_lnsim_functions
+# Loading altera_lnsim_ver.altera_pll
+# Loading work.UP_COUNTER_IP
+# Loading lpm_ver.lpm_counter
+# Loading work.DOWN_COUNTER_IP
+# Loading work.RAMhub
+# Loading altera_mf_ver.altsyncram
+# Loading altera_lnsim_ver.dps_extra_kick
+# Loading altera_lnsim_ver.dprio_init
+# Loading altera_lnsim_ver.altera_generic_pll_functions
+# Loading altera_lnsim_ver.generic_pll
+# Loading altera_mf_ver.altsyncram_body
+# Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES
+# Loading altera_mf_ver.ALTERA_MF_MEMORY_INITIALIZATION
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'clockpll_altera_pll_altera_pll_i_1098'.  Expected 26, found 5.
+#    Time: 0 ps  Iteration: 0  Instance: /tb/Test1/clock_module/clockpll_altera_pll_altera_pll_i_1098 File: /home/daniel/Downloads/Compressed/Quartus_STD_LITE_PLL_RAM/ClockPLL_sim/ClockPLL.vo Line: 48
+# ** Warning: (vsim-3722) /home/daniel/Downloads/Compressed/Quartus_STD_LITE_PLL_RAM/ClockPLL_sim/ClockPLL.vo(48): [TFMPC] - Missing connection for port 'refclk1'.
+# ** Warning: (vsim-3722) /home/daniel/Downloads/Compressed/Quartus_STD_LITE_PLL_RAM/ClockPLL_sim/ClockPLL.vo(48): [TFMPC] - Missing connection for port 'phase_en'.
+# ** Warning: (vsim-3722) /home/daniel/Downloads/Compressed/Quartus_STD_LITE_PLL_RAM/ClockPLL_sim/ClockPLL.vo(48): [TFMPC] - Missing connection for port 'updn'.
+# ** Warning: (vsim-3722) /home/daniel/Downloads/Compressed/Quartus_STD_LITE_PLL_RAM/ClockPLL_sim/ClockPLL.vo(48): [TFMPC] - Missing connection for port 'num_phase_shifts'.
+# ** Warning: (vsim-3722) /home/daniel/Downloads/Compressed/Quartus_STD_LITE_PLL_RAM/ClockPLL_sim/ClockPLL.vo(48): [TFMPC] - Missing connection for port 'scanclk'.
+# ** Warning: (vsim-3722) /home/daniel/Downloads/Compressed/Quartus_STD_LITE_PLL_RAM/ClockPLL_sim/ClockPLL.vo(48): [TFMPC] - Missing connection for port 'cntsel'.
+# ** Warning: (vsim-3722) /home/daniel/Downloads/Compressed/Quartus_STD_LITE_PLL_RAM/ClockPLL_sim/ClockPLL.vo(48): [TFMPC] - Missing connection for port 'reconfig_to_pll'.
+# ** Warning: (vsim-3722) /home/daniel/Downloads/Compressed/Quartus_STD_LITE_PLL_RAM/ClockPLL_sim/ClockPLL.vo(48): [TFMPC] - Missing connection for port 'extswitch'.
+# ** Warning: (vsim-3722) /home/daniel/Downloads/Compressed/Quartus_STD_LITE_PLL_RAM/ClockPLL_sim/ClockPLL.vo(48): [TFMPC] - Missing connection for port 'adjpllin'.
+# ** Warning: (vsim-3722) /home/daniel/Downloads/Compressed/Quartus_STD_LITE_PLL_RAM/ClockPLL_sim/ClockPLL.vo(48): [TFMPC] - Missing connection for port 'cclk'.
+# ** Warning: (vsim-3722) /home/daniel/Downloads/Compressed/Quartus_STD_LITE_PLL_RAM/ClockPLL_sim/ClockPLL.vo(48): [TFMPC] - Missing connection for port 'fboutclk'.
+# ** Warning: (vsim-3722) /home/daniel/Downloads/Compressed/Quartus_STD_LITE_PLL_RAM/ClockPLL_sim/ClockPLL.vo(48): [TFMPC] - Missing connection for port 'phase_done'.
+# ** Warning: (vsim-3722) /home/daniel/Downloads/Compressed/Quartus_STD_LITE_PLL_RAM/ClockPLL_sim/ClockPLL.vo(48): [TFMPC] - Missing connection for port 'reconfig_from_pll'.
+# ** Warning: (vsim-3722) /home/daniel/Downloads/Compressed/Quartus_STD_LITE_PLL_RAM/ClockPLL_sim/ClockPLL.vo(48): [TFMPC] - Missing connection for port 'activeclk'.
+# ** Warning: (vsim-3722) /home/daniel/Downloads/Compressed/Quartus_STD_LITE_PLL_RAM/ClockPLL_sim/ClockPLL.vo(48): [TFMPC] - Missing connection for port 'clkbad'.
+# ** Warning: (vsim-3722) /home/daniel/Downloads/Compressed/Quartus_STD_LITE_PLL_RAM/ClockPLL_sim/ClockPLL.vo(48): [TFMPC] - Missing connection for port 'phout'.
+# ** Warning: (vsim-3722) /home/daniel/Downloads/Compressed/Quartus_STD_LITE_PLL_RAM/ClockPLL_sim/ClockPLL.vo(48): [TFMPC] - Missing connection for port 'lvds_clk'.
+# ** Warning: (vsim-3722) /home/daniel/Downloads/Compressed/Quartus_STD_LITE_PLL_RAM/ClockPLL_sim/ClockPLL.vo(48): [TFMPC] - Missing connection for port 'loaden'.
+# ** Warning: (vsim-3722) /home/daniel/Downloads/Compressed/Quartus_STD_LITE_PLL_RAM/ClockPLL_sim/ClockPLL.vo(48): [TFMPC] - Missing connection for port 'extclk_out'.
+# ** Warning: (vsim-3722) /home/daniel/Downloads/Compressed/Quartus_STD_LITE_PLL_RAM/ClockPLL_sim/ClockPLL.vo(48): [TFMPC] - Missing connection for port 'cascade_out'.
+# ** Warning: (vsim-3722) /home/daniel/Downloads/Compressed/Quartus_STD_LITE_PLL_RAM/ClockPLL_sim/ClockPLL.vo(48): [TFMPC] - Missing connection for port 'zdbfbclk'.
+# 
+# add wave *
+# view structure
+# .main_pane.structure.interior.cs.body.struct
+# view signals
+# .main_pane.objects.interior.cs.body.tree
+# run -all
+# Info: =================================================
+# Info:           Generic PLL Summary
+# Info: =================================================
+# Time scale of (tb.Test1.clock_module.clockpll_altera_pll_altera_pll_i_1098.new_model.gpll.no_need_to_gen) is  1ps /  1ps
+# Info: hierarchical_name = tb.Test1.clock_module.clockpll_altera_pll_altera_pll_i_1098.new_model.gpll.no_need_to_gen
+# Info: reference_clock_frequency = 50.0 MHz
+# Info: output_clock_frequency = 75 MHZ
+# Info: phase_shift = 0 ps
+# Info: duty_cycle = 50
+# Info: sim_additional_refclk_cycles_to_lock = 0
+# Info: output_clock_high_period = 6666.666667
+# Info: output_clock_low_period = 6666.666667
+#                    0 << Starting Simulation >> 
+# This is my modification on the testbench!!! :0
+#                 4030<< Simulation Complete >>
+# ** Note: $stop    : /home/daniel/Downloads/Compressed/Quartus_STD_LITE_PLL_RAM/testbench_1.v(47)
+#    Time: 4030 ns  Iteration: 0  Instance: /tb
+# Break in Module tb at /home/daniel/Downloads/Compressed/Quartus_STD_LITE_PLL_RAM/testbench_1.v line 47
+# End time: 13:34:45 on Aug 27,2020, Elapsed time: 0:01:07
+# Errors: 0, Warnings: 22

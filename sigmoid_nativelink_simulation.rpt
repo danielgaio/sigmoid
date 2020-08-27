@@ -1,80 +1,23 @@
 Info: Start Nativelink Simulation process
+Info: NativeLink has detected Verilog design -- Verilog simulation models will be used
 
 ========= EDA Simulation Settings =====================
 
-Sim Mode              :  Gate
+Sim Mode              :  RTL
 Family                :  cycloneive
 Quartus root          :  /home/daniel/intelFPGA_lite/20.1/quartus/linux64/
 Quartus sim root      :  /home/daniel/intelFPGA_lite/20.1/quartus/eda/sim_lib
 Simulation Tool       :  modelsim-altera
-Simulation Language   :  systemverilog
+Simulation Language   :  verilog
 Simulation Mode       :  GUI
-Sim Output File       :  sigmoid.svo
-Sim SDF file          :  sigmoid__verilog.sdo
+Sim Output File       :  
+Sim SDF file          :  
 Sim dir               :  simulation/modelsim
 
 =======================================================
 
 Info: Starting NativeLink simulation with ModelSim-Altera software
 Sourced NativeLink script /home/daniel/intelFPGA_lite/20.1/quartus/common/tcl/internal/nativelink/modelsim.tcl
-Warning: File sigmoid_run_msim_gate_systemverilog.do already exists - backing up current file as sigmoid_run_msim_gate_systemverilog.do.bak2
-Probing transcript
-ModelSim-Altera Info: # do sigmoid_run_msim_gate_systemverilog.do
-ModelSim-Altera Info: # if {[file exists gate_work]} {
-ModelSim-Altera Info: # 	vdel -lib gate_work -all
-ModelSim-Altera Info: # }
-ModelSim-Altera Info: # vlib gate_work
-ModelSim-Altera Info: # vmap work gate_work
-ModelSim-Altera Info: # Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
-ModelSim-Altera Info: # vmap work gate_work 
-ModelSim-Altera Info: # Copying /home/daniel/intelFPGA/20.1/modelsim_ase/linuxaloem/../modelsim.ini to modelsim.ini
-ModelSim-Altera Info: # Modifying modelsim.ini
-ModelSim-Altera Info: # 
-ModelSim-Altera Info: # vlog -sv -work work +incdir+. {sigmoid.svo}
-ModelSim-Altera Info: # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-ModelSim-Altera Info: # Start time: 15:30:42 on Aug 24,2020
-ModelSim-Altera Info: # vlog -reportprogress 300 -sv -work work "+incdir+." sigmoid.svo 
-ModelSim-Altera Info: # -- Compiling module sigmoid
-ModelSim-Altera Info: # -- Compiling module hard_block
-ModelSim-Altera Info: # 
-ModelSim-Altera Info: # Top level modules:
-ModelSim-Altera Info: # 	sigmoid
-ModelSim-Altera Info: # End time: 15:30:42 on Aug 24,2020, Elapsed time: 0:00:00
-ModelSim-Altera Info: # Errors: 0, Warnings: 0
-ModelSim-Altera Info: # 
-ModelSim-Altera Info: vlog -reportprogress 300 -work work /home/daniel/Documents/GitHub/sigmoid/sigmoid.sv
-ModelSim-Altera Info: # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-ModelSim-Altera Info: # Start time: 15:32:20 on Aug 24,2020
-ModelSim-Altera Info: # vlog -reportprogress 300 -work work /home/daniel/Documents/GitHub/sigmoid/sigmoid.sv 
-ModelSim-Altera Info: # -- Compiling module sigmoid
-ModelSim-Altera Info: # 
-ModelSim-Altera Info: # Top level modules:
-ModelSim-Altera Info: # 	sigmoid
-ModelSim-Altera Info: # End time: 15:32:20 on Aug 24,2020, Elapsed time: 0:00:00
-ModelSim-Altera Info: # Errors: 0, Warnings: 0
-ModelSim-Altera Info: vlog -reportprogress 300 -work work /home/daniel/Documents/GitHub/sigmoid/sigmoid_tb.sv
-ModelSim-Altera Info: # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-ModelSim-Altera Info: # Start time: 15:32:20 on Aug 24,2020
-ModelSim-Altera Info: # vlog -reportprogress 300 -work work /home/daniel/Documents/GitHub/sigmoid/sigmoid_tb.sv 
-ModelSim-Altera Info: # -- Compiling module sigmoid_tb
-ModelSim-Altera Info: # 
-ModelSim-Altera Info: # Top level modules:
-ModelSim-Altera Info: # 	sigmoid_tb
-ModelSim-Altera Info: # End time: 15:32:20 on Aug 24,2020, Elapsed time: 0:00:00
-ModelSim-Altera Info: # Errors: 0, Warnings: 0
-ModelSim-Altera Info: vsim work.sigmoid_tb
-ModelSim-Altera Info: # vsim work.sigmoid_tb 
-ModelSim-Altera Info: # Start time: 15:33:24 on Aug 24,2020
-ModelSim-Altera Info: # Loading sv_std.std
-ModelSim-Altera Info: # Loading work.sigmoid_tb
-ModelSim-Altera Info: # Loading work.sigmoid
-ModelSim-Altera Info: vsim work.sigmoid
-ModelSim-Altera Info: # End time: 15:34:47 on Aug 24,2020, Elapsed time: 0:01:23
-ModelSim-Altera Info: # Errors: 0, Warnings: 0
-ModelSim-Altera Info: # vsim work.sigmoid 
-ModelSim-Altera Info: # Start time: 15:34:47 on Aug 24,2020
-ModelSim-Altera Info: # Loading sv_std.std
-ModelSim-Altera Info: # Loading work.sigmoid
-ModelSim-Altera Info: # End time: 20:40:40 on Aug 24,2020, Elapsed time: 5:05:53
-ModelSim-Altera Info: # Errors: 0, Warnings: 0
+Warning: File sigmoid_run_msim_rtl_verilog.do already exists - backing up current file as sigmoid_run_msim_rtl_verilog.do.bak11
+Info: Spawning ModelSim-Altera Simulation software 
 Info: NativeLink simulation flow was successful

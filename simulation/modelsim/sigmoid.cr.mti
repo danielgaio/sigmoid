@@ -8,13 +8,11 @@ Top level modules:
 	sigmoid
 End time: 15:20:21 on Aug 24,2020, Elapsed time: 0:00:00
 
-} {} {}} /home/daniel/Documents/GitHub/sigmoid/sigmoid_tb.sv {0 {vlog -work work -sv /home/daniel/Documents/GitHub/sigmoid/sigmoid_tb.sv
+} {} {}} /home/daniel/Documents/GitHub/sigmoid/sigmoid_tb.sv {1 {vlog -work work -sv -stats=none /home/daniel/Documents/GitHub/sigmoid/sigmoid_tb.sv
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-Start time: 15:20:21 on Aug 24,2020
-vlog -reportprogress 300 -work work -sv /home/daniel/Documents/GitHub/sigmoid/sigmoid_tb.sv 
 -- Compiling module sigmoid_tb
-** Error: /home/daniel/Documents/GitHub/sigmoid/sigmoid_tb.sv(27): (vlog-13008) Unsized literal value 1111111111111111 exceeds default size of literals which  is 32-bit. Either size the literal (i.e. 64'd1111111111111111) or reduce the literal value to fit in 32 bits.
-** Error: /home/daniel/Documents/GitHub/sigmoid/sigmoid_tb.sv(40): (vlog-13008) Unsized literal value 1111111111111111 exceeds default size of literals which  is 32-bit. Either size the literal (i.e. 64'd1111111111111111) or reduce the literal value to fit in 32 bits.
-End time: 15:20:22 on Aug 24,2020, Elapsed time: 0:00:01
 
-} {6.0 8.0} {}}
+Top level modules:
+	sigmoid_tb
+
+} {} {}}
