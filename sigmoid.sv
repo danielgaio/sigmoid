@@ -4,15 +4,15 @@ module sigmoid (x, y);
 	input signed [15:0]x;
 	output reg signed [15:0]y;
 	
-	reg x_temp;
+	reg x_mod;
 	
 	// Bloco para fazer o complemento de -0.5
 	always @ (*) begin
 		if (x[15:12] == 4'b1111) begin	// fazer complemento
 				// inverter bits de x
-				x_temp <= ~x;
+				x_mod <= ~x;
 				// somar 1
-				x_temp <= x_temp + 1;
+				x_mod <= x_mod + 1;
 		end
 	end
 	
@@ -79,7 +79,7 @@ module sigmoid (x, y);
 			y <= 16'b0000_111111111010;
 		else if ((x > 16'b0110_100000000000) && (x <= 16'b0111_000000000000))
 			y <= 16'b0001_000000000000;
-		else if ((x > 16'b0000_000000000000) && (x_temp <= 16'b0000_100000000000))		//if (x > 0 && x <= 0.5) feito o complemento
+		else if ((x > 16'b0000_000000000000) && (x_mod <= 16'b0000_100000000000))		//if (x > 0 && x <= 0.5) feito o complemento
 			y <= 16'b0000_011000001010;
 		else if (x < 16'b1001_000000000000)															//if x < -7: y = 0
 			y <= 16'b0000_000000000000;

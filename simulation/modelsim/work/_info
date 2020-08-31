@@ -36,24 +36,24 @@ Z5 o-work work -sv
 Z6 tCvgOpt 0
 vsigmoid_tb
 R1
-!s110 1598354903
+!s110 1598905641
 !i10b 1
-!s100 VlOXfGef<G7Qe;<3nAYTO0
+!s100 4M9Q80TjgYIO@N<:3m1fX3
 R2
-IX:J]G:HJPRkF=De`nZiT=3
+IB5en<go]1PQDj5?gjJ4na1
 R3
 S1
 R0
-w1598293823
+w1598905635
 8/home/daniel/Documents/GitHub/sigmoid/sigmoid_tb.sv
 F/home/daniel/Documents/GitHub/sigmoid/sigmoid_tb.sv
-!i122 3
-L0 3 60
+!i122 59
+L0 3 93
 R4
 r1
 !s85 0
 31
-!s108 1598354903.000000
+!s108 1598905641.000000
 !s107 /home/daniel/Documents/GitHub/sigmoid/sigmoid_tb.sv|
 !s90 -reportprogress|300|-work|work|-sv|-stats=none|/home/daniel/Documents/GitHub/sigmoid/sigmoid_tb.sv|
 !i113 1

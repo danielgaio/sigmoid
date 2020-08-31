@@ -8,11 +8,4 @@ Top level modules:
 	sigmoid
 End time: 15:20:21 on Aug 24,2020, Elapsed time: 0:00:00
 
-} {} {}} /home/daniel/Documents/GitHub/sigmoid/sigmoid_tb.sv {1 {vlog -work work -sv -stats=none /home/daniel/Documents/GitHub/sigmoid/sigmoid_tb.sv
-Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
--- Compiling module sigmoid_tb
-
-Top level modules:
-	sigmoid_tb
-
 } {} {}}
