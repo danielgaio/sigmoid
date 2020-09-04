@@ -8,75 +8,123 @@ module sigmoid_tb();
   	wire [15:0]y_tb;
 	
 	// other variables
-	reg unsigned [15:0]generated_results 		[65536:0];
-	reg unsigned [15:0]generated_results_deci 	[65536:0];// talvez conv para shortreal
-	shortreal	   expected_results 		[65536:0];
-	shortreal 	   expected_results_neg 	[65536:0];
-	reg unsigned [15:0]i;
-	reg unsigned [15:0]j;
+	shortreal generated_results [65536:0];
+	shortreal expected_results [65536:0];
+	reg [16:0]i;
 	
 	// test module
 	sigmoid sigmoid_DUT (
 		.x(x_tb),
-    		.y(y_tb)
+    	.y(y_tb)
 	);
 	
 	// stimulus
 
+/*
+	// função que converte saida DUT de Q4.12 para real
 	function int to_real(reg [15:0]a);
-		// fazer complemento
-		shortreal aux;
+		reg [3:0] inteira;
+		reg [11:0] fracionaria;
+		int j, expo;
+		shortreal converted, temp;
+		temp=0;
+		expo = 1;
+
+		// olhando valor recebido
 		$display("a: %b", a);
-		aux = a >> 12;				// 2� - divide por 2^12
-							// ambos numerador e denominador
-							// precisar ser tipo real
-		$display("aux shortreal: %d", aux);
-    		return aux;
-  	endfunction
-	
-  	// salvando os valores gerados pelo DUT
+
+		// converter parte inteira
+		// extrai parte corresopndente
+		inteira = a[15:12];
+
+		// converter parte fracionaria
+		fracionaria = a[11:0];
+		$display("fracionaria: %b", fracionaria);
+		// da esquerda para a direita, ver se o bit é 1, se sim, calcular 2^(posição do bit) e armazenar
+		// se próximo bit é 1, calcular e somar ao resultado armazenado
+		for (j = 11; j >= 0; j--) begin
+			if (fracionaria[j] == 1)
+				temp += shortreal'(1)/(2**(expo));
+				expo ++;
+				$display("temp: %f", temp);
+		end
+
+		// somar parte inteira e fracionária
+		converted = inteira + temp;
+		$display("converted: %f", converted);
+
+    	return converted;
+  	endfunction: to_real
+*/	
+
+
+  	// Convertendo p real os valores gerados pelo DUT e salvando
   	initial begin
-//	fork
-//		$display("dentro do primeiro initial");
-//      		for (i = 16'b0000000000000000; i <= 16'b1111111111111111; i = i+1) begin
-//          		$display("x_tb: %b",i);
-//			x_tb = i;
-//			#10
-//          		$display("y_tb: %b", y_tb);
-//			generated_results[i] = y_tb;
-//			$display("generated_results[%d]: %b", i, generated_results[i]);
-//        		// fazer complemento, trazer para decimal pra comparar
-//			generated_results_deci[i] = to_real(generated_results[i]);
-//			$display("generated_results_deci[%d]: %f", i, generated_results_deci[i]);
-//			// to_real e que converte de Q4.12 o tipo real
-//  		end
-//	join
+		fork
+			// gerando todos os valores de teste para o DUT
+			for (i = 16'b0000000000000000; i <= 16'b1111111111111111; i = i+1) begin
+				$display("-");
+				$display("x_tb: %b",i);
 
-	fork
-		i = 16'b0000000000000000;
-		expected_results[0] = 1/(1+(2.718**(-i)));
-      		$display("expected_results[0]: %f", expected_results[0]);
-		i = 1;
-		expected_results[1] = 1/(1+(2.718**(i)));
-      		$display("expected_results[1]: %f", expected_results[1]);
-	join
+				// injeta sinal no DUT
+				x_tb = i;
 
-	fork
-		// Calculando valores precisos
-  		//for (i = -'d8, j = 0; i <= 8, j <= 65536; i += 0.1, j++) begin
-      			//expected_results[j] = 1/(1+(2.718**(-i)));
-      			//$display("expected_results[%d]: %f - i= %f", j, expected_results[j], i);
-    		//end
+				#10
 
-		// Nesse for s~ao os valores negativos
-  		for (i = 16'b0000000000000000; i <= 16'b1111111111111111; i = i+1) begin
-      			expected_results_neg[i] = 
-				1/(1+(2.718**(i)));
-      			$display("expected_results_neg[%d]: %f", i, expected_results_neg[i]);
-    		end
+				// Exibe saida do DUT
+				$display("y_tb: %b", y_tb);
+				
+				// converter resultado saida DUT para decimal e salva em um vetor
+				reg [3:0] inteira;
+				reg [11:0] fracionaria;
+				int j, expo;
+				shortreal converted, temp;
+				temp=0;
+				expo = 1;
+
+				// converter parte inteira
+				// extrai parte corresopndente
+				inteira = y_tb[15:12];
+
+				// converter parte fracionaria
+				fracionaria = y_tb[11:0];
+				$display("fracionaria: %b", fracionaria);
+
+				// da esquerda para a direita, ver se o bit é 1, se sim, calcular 2^(posição do bit) e armazenar
+				// se próximo bit é 1, calcular e somar ao resultado armazenado
+				for (j = 11; j >= 0; j--) begin
+					if (fracionaria[j] == 1)
+						temp += shortreal'(1)/(2**(expo));
+						expo ++;
+						$display("temp: %f", temp);
+				end
+
+				// somar parte inteira e fracionária
+				converted = inteira + temp;
+				$display("converted: %f", converted);
+				generated_results[i] = converted;
+				$display("generated_results[%d]: %f", i, generated_results[i]);
+			end
+		join
+
+	//	fork
+	//		i = 16'b0000000000000000;
+	//		expected_results[0] = 1/(1+(2.718**(-i)));
+	//      		$display("expected_results[0]: %f", expected_results[0]);
+	//		i = 1;
+	//		expected_results[1] = 1/(1+(2.718**(i)));
+	//      		$display("expected_results[1]: %f", expected_results[1]);
+	//	join
 		
-	join
-	$finish;
+		fork
+			// Calculando valores precisos
+			//for (i = -'d8, j = 0; i <= 8, j <= 65536; i += 0.1, j++) begin
+					//expected_results[j] = 1/(1+(2.718**(-i)));
+					//$display("expected_results[%d]: %f - i= %f", j, expected_results[j], i);
+				//end
+			
+		join
+		$stop;
    	end
 
   
