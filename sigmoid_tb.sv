@@ -11,6 +11,12 @@ module sigmoid_tb();
 	shortreal generated_results [65536:0];
 	shortreal expected_results [65536:0];
 	reg [16:0]i;
+
+	// variáveis da converção para real
+	reg [3:0] inteira;
+	reg [11:0] fracionaria;
+	int j, expo;
+	shortreal converted, temp;
 	
 	// test module
 	sigmoid sigmoid_DUT (
@@ -20,48 +26,7 @@ module sigmoid_tb();
 	
 	// stimulus
 
-/*
-	// função que converte saida DUT de Q4.12 para real
-	function int to_real(reg [15:0]a);
-		reg [3:0] inteira;
-		reg [11:0] fracionaria;
-		int j, expo;
-		shortreal converted, temp;
-		temp=0;
-		expo = 1;
-
-		// olhando valor recebido
-		$display("a: %b", a);
-
-		// converter parte inteira
-		// extrai parte corresopndente
-		inteira = a[15:12];
-
-		// converter parte fracionaria
-		fracionaria = a[11:0];
-		$display("fracionaria: %b", fracionaria);
-		// da esquerda para a direita, ver se o bit é 1, se sim, calcular 2^(posição do bit) e armazenar
-		// se próximo bit é 1, calcular e somar ao resultado armazenado
-		for (j = 11; j >= 0; j--) begin
-			if (fracionaria[j] == 1)
-				temp += shortreal'(1)/(2**(expo));
-				expo ++;
-				$display("temp: %f", temp);
-		end
-
-		// somar parte inteira e fracionária
-		converted = inteira + temp;
-		$display("converted: %f", converted);
-
-    	return converted;
-  	endfunction: to_real
-*/	
-
-	reg [3:0] inteira;
-	reg [11:0] fracionaria;
-	int j, expo;
-	shortreal converted, temp;
-
+	/*pronto--
   	// Convertendo p real os valores gerados pelo DUT e salvando
   	initial begin
 		fork
@@ -102,43 +67,27 @@ module sigmoid_tb();
 
 				// somar parte inteira e fracionária
 				converted = inteira + temp;
-				$display("converted: %f", converted);
+				// guarda valor convertido em um vetor
 				generated_results[i] = converted;
 				$display("generated_results[%d]: %f", i, generated_results[i]);
 			end
 		join
+	pronto--*/
 
-	//	fork
-	//		i = 16'b0000000000000000;
-	//		expected_results[0] = 1/(1+(2.718**(-i)));
-	//      		$display("expected_results[0]: %f", expected_results[0]);
-	//		i = 1;
-	//		expected_results[1] = 1/(1+(2.718**(i)));
-	//      		$display("expected_results[1]: %f", expected_results[1]);
-	//	join
-		
+	// calculando valor preciso e guardando em expected_results
+	// a variavel "passo" gera entradas para sigmoide
+	shortreal passo;
+	int k;
+	initial begin
 		fork
-			// Calculando valores precisos
-			//for (i = -'d8, j = 0; i <= 8, j <= 65536; i += 0.1, j++) begin
-					//expected_results[j] = 1/(1+(2.718**(-i)));
-					//$display("expected_results[%d]: %f - i= %f", j, expected_results[j], i);
-				//end
-			
+			passo = -8.0;
+			for (k=0; k <= 250; k ++) begin
+				expected_results[k] = 1.0/(1.0+(2.718**(-passo)));
+				$display("expected_results[%d]: %f", k, expected_results[k]);
+				passo += 0.1;
+			end
+			$stop;
 		join
-		$stop;
-   	end
+	end
 
-  
-  // fazendo contagem de numero de not matches
-// 	initial begin
-//      for (i = 0000000000000000; i <= 1111111111111111; i = i+1) begin
-//        assert_result:
-//          assert(generated_results[i] == expected_results[i])
-//                else begin
-//                  $error("Error - output not match. Count: %d", error_count);
-//                end
-//      end
-//	end
-	
-	
 endmodule
