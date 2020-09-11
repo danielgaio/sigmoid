@@ -10,13 +10,19 @@ module sigmoid_tb();
 	// other variables
 	shortreal generated_results [65536:0];
 	shortreal expected_results [65536:0];
-	reg [16:0]i;
+	reg [16:0] i;
 
 	// variáveis da converção para real
 	reg [3:0] inteira;
 	reg [11:0] fracionaria;
 	int j, expo;
-	shortreal converted, temp;
+	shortreal converted, temp, temp2;
+
+	// variáveis do calculo de valor exato e erro
+	// a variavel "passo" gera entradas para sigmoide
+	shortreal passo;
+	int k;
+	shortreal erro_medio;
 	
 	// test module
 	sigmoid sigmoid_DUT (
@@ -25,20 +31,19 @@ module sigmoid_tb();
 	);
 	
 	// stimulus
-
-	/*pronto--
-  	// Convertendo p real os valores gerados pelo DUT e salvando
   	initial begin
+
+		// Convertendo p real os valores gerados pelo DUT e salvando
 		fork
+
 			// gerando todos os valores de teste para o DUT
-			for (i = 16'b0000000000000000; i <= 16'b1111111111111111; i = i+1) begin
-				$display("-");
+			for (i = 17'b0000000000000000; i <= 17'b1111111111111111; i = i+1) begin
 				$display("x_tb: %b",i);
 
 				// injeta sinal no DUT
-				x_tb = i;
+				x_tb = i[15:0];
 
-				#10
+				#20
 
 				// Exibe saida do DUT
 				$display("y_tb: %b", y_tb);
@@ -54,7 +59,7 @@ module sigmoid_tb();
 
 				// converter parte fracionaria
 				fracionaria = y_tb[11:0];
-				$display("fracionaria: %b", fracionaria);
+				//$display("fracionaria: %b", fracionaria);
 
 				// da esquerda para a direita, ver se o bit é 1, se sim, calcular 2^(posição do bit) e armazenar
 				// se próximo bit é 1, calcular e somar ao resultado armazenado
@@ -62,7 +67,7 @@ module sigmoid_tb();
 					if (fracionaria[j] == 1)
 						temp += shortreal'(1)/(2**(expo));
 						expo ++;
-						$display("temp: %f", temp);
+						//$display("temp: %f", temp);
 				end
 
 				// somar parte inteira e fracionária
@@ -72,21 +77,30 @@ module sigmoid_tb();
 				$display("generated_results[%d]: %f", i, generated_results[i]);
 			end
 		join
-	pronto--*/
+		$stop;
 
-	// calculando valor preciso e guardando em expected_results
-	// a variavel "passo" gera entradas para sigmoide
-	shortreal passo;
-	int k;
-	initial begin
+		// calculando valor preciso e guardando em expected_results
 		fork
-			passo = -8.0;
-			for (k=0; k <= 250; k ++) begin
+			passo = -7.0;
+			// com passo = 0.00001 são necessárias 65536 iterações para varer [-7,+7]
+			for (k=0; k <= 65536; k ++) begin
 				expected_results[k] = 1.0/(1.0+(2.718**(-passo)));
 				$display("expected_results[%d]: %f", k, expected_results[k]);
-				passo += 0.1;
+				passo += 0.0002138;
 			end
 			$stop;
+		join
+
+		// calcular as diferenças entre valor gerado e valor esperado
+		fork
+			for (k = 0; k <= 65536; k++) begin
+				temp = generated_results[k];
+				temp2 = expected_results[k];
+				erro_medio += ((temp - temp2) < 0) ? -(temp - temp2) : (temp - temp2);
+				$display("erro_medio: %f", erro_medio);
+			end
+			erro_medio /= 65536;
+			$display("erro_medio: %f", erro_medio);
 		join
 	end
 
