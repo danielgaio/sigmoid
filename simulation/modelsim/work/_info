@@ -11,24 +11,24 @@ cModel Technology
 Z0 d/home/daniel/Documents/GitHub/sigmoid/simulation/modelsim
 vsigmoid
 Z1 DXx6 sv_std 3 std 0 22 VYECXdT12H8WgbUP_5Y6:3
-Z2 !s110 1600431439
+Z2 !s110 1600455669
 !i10b 1
-!s100 1EZHF3Ha5Xj4c<A@HO3@]3
+!s100 nL3j^Dmo?d60LdJEDoQ?`0
 Z3 !s11b Dg1SIo80bB@j0V0VzS_@n1
-I0Oz5:P96TEPNHzPL^JMD:1
+I<Eek_Y5PNc94WTQH9^J]R1
 Z4 VDg1SIo80bB@j0V0VzS_@n1
 S1
 R0
-w1600431426
+w1600455407
 8/home/daniel/Documents/GitHub/sigmoid/sigmoid.sv
 F/home/daniel/Documents/GitHub/sigmoid/sigmoid.sv
-!i122 95
-L0 3 134
+!i122 122
+L0 3 172
 Z5 OV;L;2020.1;71
 r1
 !s85 0
 31
-Z6 !s108 1600431439.000000
+Z6 !s108 1600455669.000000
 !s107 /home/daniel/Documents/GitHub/sigmoid/sigmoid.sv|
 !s90 -reportprogress|300|-work|work|-sv|-stats=none|/home/daniel/Documents/GitHub/sigmoid/sigmoid.sv|
 !i113 1
@@ -38,17 +38,17 @@ vsigmoid_tb
 R1
 R2
 !i10b 1
-!s100 29O6PhmJBR?S:lf^aD`[90
+!s100 F`_^O_@WW@5:1bRlGSYEH2
 R3
-I@KAAKioBj_K2`Q_`Zjb^L3
+IiP0df@dd4_dHk6a>O9bdi1
 R4
 S1
 R0
-w1600352141
+w1600438972
 8/home/daniel/Documents/GitHub/sigmoid/sigmoid_tb.sv
 F/home/daniel/Documents/GitHub/sigmoid/sigmoid_tb.sv
-!i122 96
-L0 3 123
+!i122 123
+L0 3 126
 R5
 r1
 !s85 0
