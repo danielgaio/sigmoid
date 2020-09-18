@@ -1,5 +1,5 @@
 Analysis & Synthesis report for sigmoid
-Fri Sep 11 10:59:51 2020
+Fri Sep 18 08:32:57 2020
 Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 
 
@@ -44,13 +44,13 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Fri Sep 11 10:59:51 2020       ;
+; Analysis & Synthesis Status        ; Successful - Fri Sep 18 08:32:57 2020       ;
 ; Quartus Prime Version              ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
 ; Revision Name                      ; sigmoid                                     ;
 ; Top-level Entity Name              ; sigmoid                                     ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 179                                         ;
-;     Total combinational functions  ; 179                                         ;
+; Total logic elements               ; 251                                         ;
+;     Total combinational functions  ; 251                                         ;
 ;     Dedicated logic registers      ; 0                                           ;
 ; Total registers                    ; 0                                           ;
 ; Total pins                         ; 32                                          ;
@@ -176,17 +176,17 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+-------------+
 ; Resource                                    ; Usage       ;
 +---------------------------------------------+-------------+
-; Estimated Total logic elements              ; 179         ;
+; Estimated Total logic elements              ; 251         ;
 ;                                             ;             ;
-; Total combinational functions               ; 179         ;
+; Total combinational functions               ; 251         ;
 ; Logic element usage by number of LUT inputs ;             ;
-;     -- 4 input functions                    ; 129         ;
-;     -- 3 input functions                    ; 38          ;
-;     -- <=2 input functions                  ; 12          ;
+;     -- 4 input functions                    ; 192         ;
+;     -- 3 input functions                    ; 28          ;
+;     -- <=2 input functions                  ; 31          ;
 ;                                             ;             ;
 ; Logic elements by mode                      ;             ;
-;     -- normal mode                          ; 167         ;
-;     -- arithmetic mode                      ; 12          ;
+;     -- normal mode                          ; 236         ;
+;     -- arithmetic mode                      ; 15          ;
 ;                                             ;             ;
 ; Total registers                             ; 0           ;
 ;     -- Dedicated logic registers            ; 0           ;
@@ -196,10 +196,10 @@ https://fpgasoftware.intel.com/eula.
 ;                                             ;             ;
 ; Embedded Multiplier 9-bit elements          ; 0           ;
 ;                                             ;             ;
-; Maximum fan-out node                        ; x[13]~input ;
-; Maximum fan-out                             ; 54          ;
-; Total fan-out                               ; 697         ;
-; Average fan-out                             ; 2.87        ;
+; Maximum fan-out node                        ; x[14]~input ;
+; Maximum fan-out                             ; 64          ;
+; Total fan-out                               ; 958         ;
+; Average fan-out                             ; 3.04        ;
 +---------------------------------------------+-------------+
 
 
@@ -208,7 +208,7 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------+--------------+
 ; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name ; Entity Name ; Library Name ;
 +----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------+--------------+
-; |sigmoid                   ; 179 (179)           ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 32   ; 0            ; |sigmoid            ; sigmoid     ; work         ;
+; |sigmoid                   ; 251 (251)           ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 32   ; 0            ; |sigmoid            ; sigmoid     ; work         ;
 +----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -233,10 +233,9 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
-; 18:1               ; 2 bits    ; 24 LEs        ; 24 LEs               ; 0 LEs                  ; No         ; |sigmoid|y                 ;
-; 20:1               ; 2 bits    ; 26 LEs        ; 24 LEs               ; 2 LEs                  ; No         ; |sigmoid|y                 ;
-; 25:1               ; 2 bits    ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; No         ; |sigmoid|y                 ;
-; 26:1               ; 2 bits    ; 34 LEs        ; 32 LEs               ; 2 LEs                  ; No         ; |sigmoid|y                 ;
+; 26:1               ; 2 bits    ; 34 LEs        ; 30 LEs               ; 4 LEs                  ; No         ; |sigmoid|y                 ;
+; 38:1               ; 2 bits    ; 50 LEs        ; 50 LEs               ; 0 LEs                  ; No         ; |sigmoid|y                 ;
+; 39:1               ; 2 bits    ; 52 LEs        ; 50 LEs               ; 2 LEs                  ; No         ; |sigmoid|y                 ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
 
 
@@ -246,17 +245,18 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
 ; boundary_port         ; 32                          ;
-; cycloneiii_lcell_comb ; 180                         ;
-;     arith             ; 12                          ;
-;         3 data inputs ; 12                          ;
-;     normal            ; 168                         ;
-;         0 data inputs ; 2                           ;
-;         2 data inputs ; 11                          ;
-;         3 data inputs ; 26                          ;
-;         4 data inputs ; 129                         ;
+; cycloneiii_lcell_comb ; 252                         ;
+;     arith             ; 15                          ;
+;         2 data inputs ; 15                          ;
+;     normal            ; 237                         ;
+;         0 data inputs ; 1                           ;
+;         1 data inputs ; 1                           ;
+;         2 data inputs ; 15                          ;
+;         3 data inputs ; 28                          ;
+;         4 data inputs ; 192                         ;
 ;                       ;                             ;
-; Max LUT depth         ; 9.00                        ;
-; Average LUT depth     ; 7.22                        ;
+; Max LUT depth         ; 10.70                       ;
+; Average LUT depth     ; 8.66                        ;
 +-----------------------+-----------------------------+
 
 
@@ -265,7 +265,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:01     ;
+; Top            ; 00:00:03     ;
 +----------------+--------------+
 
 
@@ -275,7 +275,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
-    Info: Processing started: Fri Sep 11 10:59:43 2020
+    Info: Processing started: Fri Sep 18 08:32:47 2020
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off sigmoid -c sigmoid
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -292,14 +292,14 @@ Warning (13024): Output pins are stuck at VCC or GND
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 211 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 283 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 16 input pins
     Info (21059): Implemented 16 output pins
-    Info (21061): Implemented 179 logic cells
+    Info (21061): Implemented 251 logic cells
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 6 warnings
-    Info: Peak virtual memory: 395 megabytes
-    Info: Processing ended: Fri Sep 11 10:59:51 2020
-    Info: Elapsed time: 00:00:08
+    Info: Peak virtual memory: 389 megabytes
+    Info: Processing ended: Fri Sep 18 08:32:57 2020
+    Info: Elapsed time: 00:00:10
     Info: Total CPU time (on all processors): 00:00:20
 
 

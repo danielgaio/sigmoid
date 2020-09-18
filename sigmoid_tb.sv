@@ -22,7 +22,7 @@ module sigmoid_tb();
 	// a variavel "passo" gera entradas para sigmoide
 	shortreal passo;
 	int k;
-	shortreal erro_medio;
+	shortreal erro_medio, RMSE;
 	
 	// test module
 	sigmoid sigmoid_DUT (
@@ -32,6 +32,19 @@ module sigmoid_tb();
 	
 	// stimulus
   	initial begin
+
+		//fork
+			//x_tb = 16'b1000_101110000101; -7.28
+			//x_tb = 16'b1011_100111101100; -4.38
+			//x_tb = 16'b1101_010011001101; -2.7
+			//x_tb = 16'b1111_110001111011; //-0.22
+			//x_tb = 16'b0000_101110000101; 0.72
+			//x_tb = 16'b0001_101100110011; 1.7
+			//x_tb = 16'b0101_000000000000; 5
+			//x_tb = 16'b0111_001100110011; 7.2
+			//#20
+			//$display("y_tb: %b", y_tb);
+		//join
 
 		// Convertendo p real os valores gerados pelo DUT e salvando
 		fork
@@ -82,7 +95,7 @@ module sigmoid_tb();
 		// calculando valor preciso e guardando em expected_results
 		fork
 			passo = -7.0;
-			// com passo = 0.00001 são necessárias 65536 iterações para varer [-7,+7]
+			// com passo = 0.0002138 são necessárias 65536 iterações para varer [-7,+7]
 			for (k=0; k <= 65536; k ++) begin
 				expected_results[k] = 1.0/(1.0+(2.718**(-passo)));
 				$display("expected_results[%d]: %f", k, expected_results[k]);
@@ -96,11 +109,16 @@ module sigmoid_tb();
 			for (k = 0; k <= 65536; k++) begin
 				temp = generated_results[k];
 				temp2 = expected_results[k];
-				erro_medio += ((temp - temp2) < 0) ? -(temp - temp2) : (temp - temp2);
+				//erro_medio += ((temp - temp2) < 0) ? -(temp - temp2) : (temp - temp2);
+				erro_medio += ((temp - temp2)**2);
 				$display("erro_medio: %f", erro_medio);
 			end
 			erro_medio /= 65536;
 			$display("erro_medio: %f", erro_medio);
+
+			// calcular a raiz do erro medio
+			RMSE = erro_medio**0.5;
+			$display("RMSE: %f", RMSE);
 		join
 	end
 
