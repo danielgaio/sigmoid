@@ -33,7 +33,7 @@ module sigmoid_tb();
 	// stimulus
   	initial begin
 
-/*
+
 		fork
 			//x_tb = 16'b1000_101110000101; //-7.28
 			//x_tb = 16'b1011_100111101100; //-4.38
@@ -42,21 +42,23 @@ module sigmoid_tb();
 			//x_tb = 16'b0000_101110000101; 0.72
 			//x_tb = 16'b0001_101100110011; 1.7
 			//x_tb = 16'b0101_000000000000; 5
-			x_tb = 16'b0111_001100110011; //7.2
+			//x_tb = 16'b0111_001100110011; //7.2
+			x_tb = 16'b1111_001111101110;
 			#20
 			$display("y_tb: %b", y_tb);
 		join
-*/
+
 
 		// Convertendo p real os valores gerados pelo DUT e salvando
 		fork
 
 			// gerando todos os valores de teste para o DUT
 			for (i = 17'b0000000000000000; i <= 17'b1111111111111111; i = i+1) begin
-				$display("x_tb: %b",i);
 
 				// injeta sinal no DUT
 				x_tb = i[15:0];
+
+				$display("x_tb: %b", x_tb);
 
 				#20
 

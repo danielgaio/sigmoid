@@ -90,26 +90,25 @@ module sigmoid (x, y);
 			y <= 16'b0000_111111111010;
 
 		else if ((x > 16'b0110_100000000000) && (x <= 16'b0111_000000000000))		// if (x > 6.5 && x <= 7)
+			y <= 16'b0000_111111111100;
+
+		else if ((x > 16'b0111_000000000000) && (x <= 16'b0111_100000000000))		// if (x > 7 && x <= 7.5)
+			y <= 16'b0000_111111111110;
+
+		// Agora uma clausula que capta todos os valores entre 7.5 e o inicio da representação negativa
+
+		else if (x > 16'b0111_100000000000 && x < 16'b1000_000000000000)			//if x > 7.5 && x < (-8: inicio valores negativos)
 			y <= 16'b0001_000000000000;
 
-		// Agora uma clausula que capta todos os valores entre 7 e o inicio da representação negativa
-
-		else if (x > 16'b0111_000000000000 && x < 16'b1000_000000000000)							//if x > 7 && x < (-8: inicio valores negativos)
-			y <= 16'b0001_000000000000;
 
 
-
-			// Valores de entrada negativos
-
-//################# Em construção ##############################
+		// Valores de entrada negativos
 
 		else if ((x < 16'b1000_100000000000) && (x >= 16'b1000_000000000000))		//if (x < -7.5 && x >= -8)
 			y <= 16'b0000_000000000001;
 
 		else if ((x < 16'b1001_000000000000) && (x >= 16'b1000_100000000000))		//if (x < -7 && x >= -7.5)
 			y <= 16'b0000_000000000010;
-
-//###############################################
 
 		else if ((x < 16'b1001_100000000000) && (x >= 16'b1001_000000000000))		//if (x < -6.5 && x >= -7)
 			y <= 16'b0000_000000000100;
@@ -145,28 +144,24 @@ module sigmoid (x, y);
 
 		// casos que precisam de complemento para comparação em módulo
 
-		// Caso possivelmente problematico
 		else if ((x_mod_plus > 16'b0001_000000000000) && (x >= 16'b1110_110000000000))				//if (x < -1 && x >= -1.25)
 			y <= 16'b0000_001110010000;
-
 		
 		else if ((x_mod_plus > 16'b0000_110000000000) && (x_mod_plus <= 16'b0001_000000000000))		//if (x < -0.75 && x >= -1)
 			y <= 16'b0000_010001001110;
-		else if ((x_mod_plus > 16'b0000_100000000000) && (x <= 16'b0000_110000000000))				//if (x < -0.5 && x >= -0.75)
+
+		else if ((x_mod_plus > 16'b0000_100000000000) && (x_mod_plus <= 16'b0000_110000000000))		//if (x < -0.5 && x >= -0.75)
 			y <= 16'b0000_010100100010;
+
 		else if ((x_mod_plus > 16'b0000_010000000000) && (x_mod_plus <= 16'b0000_100000000000))		//if (x < -0.25 && x >= -0.5)
 			y <= 16'b0000_011000001010;
 
 		else if ((x > 16'b0000_000000000000) && (x_mod_plus <= 16'b0000_010000000000))				//if (x > 0 && x <= -0.25)
 			y <= 16'b0000_011100000001;
-
-		
-		
 		
 		// Casos externos
-
 		
-		else																		//if x < -7: y = 0
+		else																						//if (x < -8): y = 0
 			y <= 16'b0000_000000000000;												
 
 	end
