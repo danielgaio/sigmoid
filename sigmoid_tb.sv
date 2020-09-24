@@ -22,7 +22,7 @@ module sigmoid_tb();
 	// a variavel "passo" gera entradas para sigmoide
 	shortreal passo;
 	int k;
-	shortreal erro_medio, RMSE;
+	shortreal rmse_temp, RMSE, erro_absoluto;
 	
 	// test module
 	sigmoid sigmoid_DUT (
@@ -34,6 +34,7 @@ module sigmoid_tb();
   	initial begin
 
 /*
+		// sessão para fazer testes com valores especificos
 		fork
 			//x_tb = 16'b1000_101110000101; //-7.28
 			//x_tb = 16'b1011_100111101100; //-4.38
@@ -110,19 +111,48 @@ module sigmoid_tb();
 
 		// calcular as diferenças entre valor gerado e valor esperado
 		fork
-			for (k = 0; k <= 65536; k++) begin
-				temp = generated_results[k];
-				temp2 = expected_results[k];
-				//erro_medio += ((temp - temp2) < 0) ? -(temp - temp2) : (temp - temp2);
-				erro_medio += ((temp - temp2)**2);
-				$display("erro_medio: %f", erro_medio);
-			end
-			erro_medio /= 65536;
-			$display("erro_medio: %f", erro_medio);
+			// calculando para o primeiro intervalo
+			j = 0;
+			for (k = 32768; k <= 65536; k++) begin
+				temp = expected_results[k];
+				temp2 = generated_results[j];
 
+				erro_absoluto += (((temp2 - temp) / temp) < 0) ? -((temp2 - temp) / temp) : ((temp2 - temp) / temp);
+
+				$display("erro_absoluto: %f", erro_absoluto);
+
+				rmse_temp += ((temp - temp2)**2);
+
+				//$display("rmse_temp: %f", rmse_temp);
+
+				j++;
+			end
+
+			// calculando para o segundo intervalo
+			j = 65536;
+			for (k = 32768; k >= 0; k--) begin
+				temp = expected_results[k];
+				temp2 = generated_results[j];
+
+				erro_absoluto += (((temp - temp2)) < 0) ? -(temp - temp2) : (temp - temp2);
+
+				$display("erro_absoluto: %f", erro_absoluto);
+
+				rmse_temp += ((temp - temp2)**2);
+
+				//$display("rmse_temp: %f", rmse_temp);
+				
+				j--;
+			end
+
+			rmse_temp /= 65536;
 			// calcular a raiz do erro medio
-			RMSE = erro_medio**0.5;
+			RMSE = rmse_temp**0.5;
 			$display("RMSE: %f", RMSE);
+
+			// exibindo também o erro absoluto
+			erro_absoluto /= 65536;
+			$display("Erro absoluto: %f", erro_absoluto);
 		join
 	end
 
