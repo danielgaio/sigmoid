@@ -22,7 +22,7 @@ module sigmoid_tb();
 	// a variavel "passo" gera entradas para sigmoide
 	shortreal passo;
 	int k;
-	shortreal rmse_temp, RMSE, erro_absoluto;
+	shortreal rmse_temp, RMSE, erro_absoluto, max_error;
 	
 	// test module
 	sigmoid sigmoid_DUT (
@@ -113,6 +113,7 @@ module sigmoid_tb();
 		fork
 			// calculando para o primeiro intervalo
 			j = 0;
+			max_error = 0;
 			for (k = 32768; k <= 65536; k++) begin
 				temp = expected_results[k];
 				temp2 = generated_results[j];
@@ -124,6 +125,10 @@ module sigmoid_tb();
 				rmse_temp += ((temp - temp2)**2);
 
 				//$display("rmse_temp: %f", rmse_temp);
+				
+				// calculando o erro maximo
+				if ((temp2 - temp) > max_error)
+					max_error = (temp2 - temp);
 
 				j++;
 			end
@@ -142,6 +147,10 @@ module sigmoid_tb();
 
 				//$display("rmse_temp: %f", rmse_temp);
 				
+				// calculando o erro maximo
+				if ((temp2 - temp) > max_error)
+					max_error = (temp2 - temp);
+				
 				j--;
 			end
 
@@ -153,6 +162,9 @@ module sigmoid_tb();
 			// exibindo também o erro absoluto
 			erro_absoluto /= 65536;
 			$display("Erro absoluto: %f", erro_absoluto);
+			
+			// exibindo o erro maximo
+			$display("Max_error: %f", max_error);
 		join
 	end
 

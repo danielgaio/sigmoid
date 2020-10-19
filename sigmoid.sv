@@ -1,7 +1,7 @@
 `timescale 1ns/1ps
 
 module sigmoid (x, y);
-	input reg signed [15:0] x;
+	input wire signed [15:0] x;
 	output reg signed [15:0] y;
 	
 	reg [15:0] x_mod;
@@ -14,7 +14,7 @@ module sigmoid (x, y);
 			// inverter bits de x
 			x_mod <= ~x;
 			// somar 1
-			x_mod_plus <= x_mod + 1;
+			x_mod_plus <= x_mod + 'b1;
 		end else begin
 			x_mod <= 16'b1111_111111111111;
 			x_mod_plus <= 16'b1111_111111111111;

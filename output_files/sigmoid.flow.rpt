@@ -1,5 +1,5 @@
 Flow report for sigmoid
-Mon Sep 21 11:45:37 2020
+Mon Oct  5 14:14:27 2020
 Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 
 
@@ -41,13 +41,13 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Flow Summary                                                                     ;
 +------------------------------------+---------------------------------------------+
-; Flow Status                        ; Successful - Mon Sep 21 11:45:37 2020       ;
+; Flow Status                        ; Successful - Mon Oct  5 14:14:27 2020       ;
 ; Quartus Prime Version              ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
 ; Revision Name                      ; sigmoid                                     ;
 ; Top-level Entity Name              ; sigmoid                                     ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 232 / 6,272 ( 4 % )                         ;
-;     Total combinational functions  ; 232 / 6,272 ( 4 % )                         ;
+; Total logic elements               ; 229 / 6,272 ( 4 % )                         ;
+;     Total combinational functions  ; 229 / 6,272 ( 4 % )                         ;
 ;     Dedicated logic registers      ; 0 / 6,272 ( 0 % )                           ;
 ; Total registers                    ; 0                                           ;
 ; Total pins                         ; 32 / 92 ( 35 % )                            ;
@@ -65,7 +65,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 09/21/2020 11:45:16 ;
+; Start date & time ; 10/05/2020 14:14:09 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; sigmoid             ;
 +-------------------+---------------------+
@@ -76,7 +76,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------+----------------------------------------+---------------+-------------+-----------------------------------+
 ; Assignment Name                     ; Value                                  ; Default Value ; Entity Name ; Section Id                        ;
 +-------------------------------------+----------------------------------------+---------------+-------------+-----------------------------------+
-; COMPILER_SIGNATURE_ID               ; 167300351220013.160069951636472        ; --            ; --          ; --                                ;
+; COMPILER_SIGNATURE_ID               ; 167300351220013.160191804919863        ; --            ; --          ; --                                ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                    ; --            ; --          ; eda_board_design_timing           ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                    ; --            ; --          ; eda_board_design_boundary_scan    ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                    ; --            ; --          ; eda_board_design_signal_integrity ;
@@ -89,6 +89,7 @@ https://fpgasoftware.intel.com/eula.
 ; PARTITION_FITTER_PRESERVATION_LEVEL ; -- (Not supported for targeted family) ; --            ; --          ; Top                               ;
 ; PARTITION_NETLIST_TYPE              ; -- (Not supported for targeted family) ; --            ; --          ; Top                               ;
 ; PROJECT_OUTPUT_DIRECTORY            ; output_files                           ; --            ; --          ; --                                ;
+; TIMING_ANALYZER_DO_REPORT_TIMING    ; On                                     ; Off           ; --          ; --                                ;
 +-------------------------------------+----------------------------------------+---------------+-------------+-----------------------------------+
 
 
@@ -97,12 +98,12 @@ https://fpgasoftware.intel.com/eula.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:11     ; 1.0                     ; 396 MB              ; 00:00:25                           ;
-; Fitter               ; 00:00:04     ; 1.0                     ; 928 MB              ; 00:00:05                           ;
-; Assembler            ; 00:00:00     ; 1.0                     ; 343 MB              ; 00:00:01                           ;
-; Timing Analyzer      ; 00:00:02     ; 1.0                     ; 457 MB              ; 00:00:02                           ;
-; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 588 MB              ; 00:00:00                           ;
-; Total                ; 00:00:18     ; --                      ; --                  ; 00:00:33                           ;
+; Analysis & Synthesis ; 00:00:10     ; 1.0                     ; 408 MB              ; 00:00:21                           ;
+; Fitter               ; 00:00:05     ; 1.0                     ; 929 MB              ; 00:00:05                           ;
+; Assembler            ; 00:00:00     ; 1.0                     ; 340 MB              ; 00:00:01                           ;
+; Timing Analyzer      ; 00:00:01     ; 1.0                     ; 454 MB              ; 00:00:01                           ;
+; EDA Netlist Writer   ; 00:00:00     ; 1.0                     ; 586 MB              ; 00:00:00                           ;
+; Total                ; 00:00:16     ; --                      ; --                  ; 00:00:28                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
