@@ -27,7 +27,7 @@ module sigmoid_tb();
 	// modulo de teste
 	sigmoid sigmoid_DUT (
 		.x(x_tb),
-    	.y(y_tb)
+    .y(y_tb)
 	);
 	
 	// estimulos
